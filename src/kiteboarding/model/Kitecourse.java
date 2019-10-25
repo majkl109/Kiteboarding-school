@@ -12,7 +12,6 @@ import javax.persistence.Table;
 @Table
 public class Kitecourse extends ClassEntity implements Serializable {
 
-    
     private String kitecoursetype;
     private int duration;
     private int price;
@@ -20,9 +19,11 @@ public class Kitecourse extends ClassEntity implements Serializable {
     @OneToMany(mappedBy = "kitecourse")
     private List<Kitegroup> kitegroups = new ArrayList<>();
     
-    @OneToMany(mappedBy = "kitecourse")
-    private List<Person> persons = new ArrayList<>();
+   // @OneToMany(mappedBy = "kitecourse")
+   // private List<Person> persons = new ArrayList<>();
 
+    
+    
     public String getKitecoursetype() {
         return kitecoursetype;
     }
@@ -55,15 +56,14 @@ public class Kitecourse extends ClassEntity implements Serializable {
         this.kitegroups = kitegroups;
     }
 
-    public List<Person> getPersons() {
-        return persons;
-    }
+  //  public List<Person> getPersons() {
+ //       return persons;
+ //   }
 
-    public void setPersons(List<Person> persons) {
-        this.persons = persons;
-    }
+  //  public void setPersons(List<Person> persons) {
+  //      this.persons = persons;
+  //  }
 
               
 }
-
 

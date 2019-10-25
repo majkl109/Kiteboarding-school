@@ -1,7 +1,7 @@
 package kiteboarding.view;
 
-import kiteboarding.controller.ProcessingOperator;
-import kiteboarding.model.Operator;
+import kiteboarding.controller.ProcessingOperators;
+import kiteboarding.model.Operators;
 import javax.swing.JOptionPane;
 
 
@@ -39,7 +39,9 @@ public class LoginWindow extends javax.swing.JFrame {
 
         jLabel2.setText("PASSWORD: ");
 
-        txtPassword.setText("jPasswordField2");
+        txtPassword.setText("majkl109");
+
+        txtEmail.setText("majkl.andracic@gmail.com");
 
         jLabel3.setText("KITEBOARDING SCHOOL LOGIN");
 
@@ -68,7 +70,7 @@ public class LoginWindow extends javax.swing.JFrame {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(txtPassword)
                                 .addComponent(txtEmail)))))
-                .addContainerGap(110, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,12 +91,13 @@ public class LoginWindow extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
      
-         ProcessingOperator po = new ProcessingOperator();
-         Operator o = po.authorising(txtEmail.getText(), String.valueOf(txtPassword.getPassword()));
+         ProcessingOperators po = new ProcessingOperators();
+         Operators o = po.authorising(txtEmail.getText(), String.valueOf(txtPassword.getPassword()));
          if(o!=null){
              new KiteboardingMenu(o).setVisible(true);
              dispose();

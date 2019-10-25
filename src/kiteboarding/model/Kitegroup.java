@@ -19,10 +19,8 @@ import javax.persistence.TemporalType;
 @Table
 public class Kitegroup extends ClassEntity implements Serializable{
 
-     @ManyToOne
-     private Kitecourse kitecourse;
-     
-     @ManyToOne
+    
+    @ManyToOne
      private Teacher teacher;
      
      private int numberOfStudents;
@@ -32,13 +30,14 @@ public class Kitegroup extends ClassEntity implements Serializable{
 
      @ManyToMany(cascade = {CascadeType.ALL})
      @JoinTable(
-        name = "kitegroup_student",
-        joinColumns = {@JoinColumn( name = " kitegroup_id")},
-        inverseJoinColumns = {@JoinColumn( name = "student_id")}
+        name = "kitemember",
+        joinColumns = {@JoinColumn( name = "kitegroup id")},
+        inverseJoinColumns = {@JoinColumn( name = "student id")}
     )         
     private List<Student> students = new ArrayList<>();
      
-     
+    private Kitecourse kitecourse;
+ 
      
     public Kitecourse getKitecourse() {
         return kitecourse;

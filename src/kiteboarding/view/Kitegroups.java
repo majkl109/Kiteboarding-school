@@ -8,36 +8,19 @@ import kiteboarding.model.Kitecourse;
 import kiteboarding.model.Kitegroup;
 import kiteboarding.model.Teacher;
 import kiteboarding.model.Student;
-import kiteboarding.helper.HibernateUtil;
 import kiteboarding.helper.KiteboardingException;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.reflect.Modifier;
-import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.Locale;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
-import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import com.google.gson.ExclusionStrategy;
-import com.google.gson.FieldAttributes;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 
 public class Kitegroups extends javax.swing.JFrame {
 
-    private final ProcessingKitegroup processingEntity;
-    private final ProcessingStudent processingStudent;
+    private  ProcessingKitegroup processingEntity = new ProcessingKitegroup();
+    private  ProcessingStudent processingStuden = new ProcessingStudent();
     private static DefaultComboBoxModel<Kitecourse>modelKitecourse;
     private static DefaultComboBoxModel<Teacher>modelTeacher;
     private Kitegroup kitegroup; 
@@ -45,9 +28,11 @@ public class Kitegroups extends javax.swing.JFrame {
     
     public Kitegroups() {
         initComponents();
-        processingEntity = new ProcessingKitegroup();
-        processingStudent = new ProcessingStudent();
-        
+        initData();
+        loadData();
+    }
+    
+       private void initData() {
         DefaultComboBoxModel<Kitecourse> mkc = new DefaultComboBoxModel<>();
         Kitecourse kc = new Kitecourse();
         kc.setId(0);
@@ -73,9 +58,6 @@ public class Kitegroups extends javax.swing.JFrame {
         sdStartDate.setLocale(new Locale("hr","HR"));
         sdStartDate.getSettings().setFormatForDatesCommonEra("dd.MMMM.yyyyy.");
         sdStartDate.getSettings().setFormatForDatesBeforeCommonEra("dd.MMMM. yyyy");
-        
-        loadData();
-         
     }
     private void loadData(){
         DefaultListModel<Kitegroup> m =new DefaultListModel<>();
@@ -259,6 +241,7 @@ public class Kitegroups extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     
     private void cmbTeacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTeacherActionPerformed
@@ -396,4 +379,6 @@ public class Kitegroups extends javax.swing.JFrame {
     private com.github.lgooddatepicker.components.DatePicker sdStartDate;
     private javax.swing.JList<Student> studentsDatabase;
     // End of variables declaration//GEN-END:variables
+
+ 
 }
