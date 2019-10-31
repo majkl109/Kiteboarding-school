@@ -1,20 +1,31 @@
 package kiteboarding.model;
 
-import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
+import java.io.Serializable;
+import javax.persistence.Entity;
 
 
 @MappedSuperclass
-public abstract class Person  extends ClassEntity {
+public abstract class Person extends ClassEntity {
 
 
      private String firstname;
      private String lastname;
-     private String email;
-     
-     @ManyToOne
-     private Kitecourse kitecourse;
+     private String email;  
      private String iban;
+
+    public Person() {
+        super();
+    }
+     
+    public Person(String firstname, String lastname, String email,Integer id, String iban ) {
+         super(id);
+         this.firstname = firstname;
+         this.lastname = lastname;
+         this.email = email;
+         this.iban = iban;
+         
+     }
 
     public String getFirstname() {
         return firstname;
@@ -48,19 +59,12 @@ public abstract class Person  extends ClassEntity {
         this.iban = iban;
     }
 
-    public Kitecourse getKitecourse() {
-        return kitecourse;
+    @Override
+    public String toString() {
+        return getFirstname() + " " + getLastname();
     }
-
-    public void setKitecourse(Kitecourse kitecourse) {
-        this.kitecourse = kitecourse;
-    }
-
-     
-
-
-
-
+    
+   
 }
 
 

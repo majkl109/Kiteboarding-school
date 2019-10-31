@@ -1,16 +1,13 @@
 package kiteboarding.model;
 
 
-import javax.persistence.Column;
+import java.io.Serializable;
 import javax.persistence.Entity;
 
 @Entity
-public class Operators extends ClassEntity {
+public class Operators extends ClassEntity implements Serializable {
 
     private String email;
-    
-    @Column(columnDefinition = "char(60")
-    
     private String password;
     private String firstName;
     private String lastName;
@@ -46,6 +43,13 @@ public class Operators extends ClassEntity {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    @Override
+    public String toString() {
+        return "Operators{" + "firstName=" + firstName + ", lastName=" + lastName + '}';
+    }
+
+    
     
     
     

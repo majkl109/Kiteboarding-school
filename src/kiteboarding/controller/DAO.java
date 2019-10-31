@@ -32,7 +32,7 @@ public class DAO<T> {
     //Delete
     public void delete(T ClassEntity) {
         session.beginTransaction();
-        session.saveOrUpdate(ClassEntity);
+        session.delete(ClassEntity);
         session.getTransaction().commit();
        }
     

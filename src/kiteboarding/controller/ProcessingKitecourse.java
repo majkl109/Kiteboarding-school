@@ -27,7 +27,7 @@ public class ProcessingKitecourse extends Processing<Kitecourse> {
     public void delete(Kitecourse c) throws KiteboardingException{
         
         if(c.getKitegroups().isEmpty()){
-            throw new KiteboardingException("Kitecourse has kitegroups and can not be erased");
+            throw new KiteboardingException("Kitecourse has kitegroups and can not be deleted");
         }
         
         dao.delete(c);

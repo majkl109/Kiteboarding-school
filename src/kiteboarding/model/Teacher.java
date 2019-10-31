@@ -12,11 +12,12 @@ import java.util.List;
 @Table
 public class Teacher extends Person implements Serializable {
    
+     private int contractduration;
+     
 @OneToMany(mappedBy = "teacher")
     private List<Kitegroup> kitegroups = new ArrayList<>(); 
     
-    private int contractduration;
-
+  
     public List<Kitegroup> getKitegroups() {
         return kitegroups;
     }
@@ -32,10 +33,11 @@ public class Teacher extends Person implements Serializable {
     public void setContractduration(int contractduration) {
         this.contractduration = contractduration;
     }
-          
-    
-
-
+     
+    @Override
+    public String toString() {
+        return getFirstname() + " " + getLastname();
+    }
 }
 
 

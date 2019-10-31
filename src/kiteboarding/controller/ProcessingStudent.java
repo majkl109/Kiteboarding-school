@@ -50,10 +50,7 @@ public class ProcessingStudent extends ProcessingPerson<Student> implements Proc
         
         
     public void delete(Student s) throws KiteboardingException{
-        if(s.getKitegroups().size()>0){
-            throw new KiteboardingException("Cannot delete student. Student is attending one or more kitegroups ");
-        }
-              
+        
         dao.delete(s);   
     }
      public void checking(Student s) throws KiteboardingException{

@@ -20,7 +20,7 @@ import javax.swing.JOptionPane;
 public class Kitegroups extends javax.swing.JFrame {
 
     private  ProcessingKitegroup processingEntity = new ProcessingKitegroup();
-    private  ProcessingStudent processingStuden = new ProcessingStudent();
+    private  ProcessingStudent processingStudent = new ProcessingStudent();
     private static DefaultComboBoxModel<Kitecourse>modelKitecourse;
     private static DefaultComboBoxModel<Teacher>modelTeacher;
     private Kitegroup kitegroup; 
@@ -55,8 +55,8 @@ public class Kitegroups extends javax.swing.JFrame {
         cmbTeacher.setModel(mt);
     
     
-        sdStartDate.setLocale(new Locale("hr","HR"));
-        sdStartDate.getSettings().setFormatForDatesCommonEra("dd.MMMM.yyyyy.");
+//        sdStartDate.setLocale(new Locale("hr","HR"));
+        sdStartDate.getSettings().setFormatForDatesCommonEra("dd.MMMM.yyyy.");
         sdStartDate.getSettings().setFormatForDatesBeforeCommonEra("dd.MMMM. yyyy");
     }
     private void loadData(){
@@ -94,7 +94,7 @@ public class Kitegroups extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         listEntities = new javax.swing.JList<Kitegroup>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         btnAdd.setText("ADD");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {

@@ -14,24 +14,23 @@ public class Students extends javax.swing.JFrame {
 
     
     private ProcessingStudent processingEntity;
-    private static DefaultComboBoxModel<Kitecourse>modelKitecourse;
     private Student student;
     
     public Students() {
         initComponents();
         processingEntity = new ProcessingStudent();
-        
-        DefaultComboBoxModel<Kitecourse> mkc = new DefaultComboBoxModel<>();
-        Kitecourse kc = new Kitecourse();
-        kc.setId(0);
-        kc.setKitecoursetype("Select kitecourse");
-        mkc.addElement(kc);
-        new ProcessingKitecourse().getListed().forEach((c) -> {
-            mkc.addElement(c);
-        });
-        cmbKitecourse.setModel(mkc);
-     
-        loadData();
+//        
+//        DefaultComboBoxModel<Kitecourse> mkc = new DefaultComboBoxModel<>();
+//        Kitecourse kc = new Kitecourse();
+//        kc.setId(0);
+//        kc.setKitecoursetype("Select kitecourse");
+//        mkc.addElement(kc);
+//        new ProcessingKitecourse().getListed().forEach((c) -> {
+//            mkc.addElement(c);
+//        });
+//        cmbKitecourse.setModel(mkc);
+//     
+//        loadData();
     }
     private void loadData() {
         DefaultListModel<Student> m = new DefaultListModel<>();
@@ -55,18 +54,16 @@ public class Students extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtIBAN = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         btnAdd = new javax.swing.JButton();
         btnChange = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
-        cmbKitecourse = new javax.swing.JComboBox<Kitecourse>();
         jLabel8 = new javax.swing.JLabel();
         txtContractNumber = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         listEntites.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
@@ -80,8 +77,6 @@ public class Students extends javax.swing.JFrame {
         jLabel2.setText("Last name");
 
         jLabel3.setText("E mail");
-
-        jLabel5.setText("Kitecourse");
 
         jLabel6.setText("IBAN");
 
@@ -105,12 +100,6 @@ public class Students extends javax.swing.JFrame {
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
-            }
-        });
-
-        cmbKitecourse.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbKitecourseActionPerformed(evt);
             }
         });
 
@@ -146,28 +135,24 @@ public class Students extends javax.swing.JFrame {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel1)
                                             .addComponent(jLabel2)
-                                            .addComponent(jLabel3)
-                                            .addComponent(jLabel5))
+                                            .addComponent(jLabel3))
+                                        .addGap(89, 89, 89)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(89, 89, 89)
-                                                .addComponent(cmbKitecourse, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(txtLastName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(txtFirstName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                            .addComponent(txtLastName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtFirstName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGap(131, 131, 131)))
                         .addGap(18, 18, 18))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel8))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtContractNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtIBAN, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtContractNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtIBAN, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(146, 146, 146)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38))
@@ -190,22 +175,15 @@ public class Students extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
                             .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(16, 16, 16)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cmbKitecourse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
                             .addComponent(txtIBAN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addGap(12, 12, 12))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(txtContractNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtContractNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8))
+                        .addGap(39, 39, 39)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -230,13 +208,13 @@ public class Students extends javax.swing.JFrame {
             return;
         }
     
-        modelKitecourse = (DefaultComboBoxModel<Kitecourse>) cmbKitecourse.getModel();
-        for (int i = 0; i < modelKitecourse.getSize(); i++) {
-            if (modelKitecourse.getElementAt(i).getId() == student.getKitecourse().getId()) {
-                cmbKitecourse.setSelectedIndex(i);
-                break;
-            }
-        }
+//        modelKitecourse = (DefaultComboBoxModel<Kitecourse>) cmbKitecourse.getModel();
+//        for (int i = 0; i < modelKitecourse.getSize(); i++) {
+//            if (modelKitecourse.getElementAt(i).getId() == student.getKitecourse().getId()) {
+//                cmbKitecourse.setSelectedIndex(i);
+//                break;
+//            }
+//        }
         
         cleanFields();
         
@@ -261,9 +239,9 @@ public class Students extends javax.swing.JFrame {
             JOptionPane.showConfirmDialog(null, e.getMessage());
             return;
         }
+        loadData();
         
-      
-          cleanFields();
+        cleanFields();
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeActionPerformed
@@ -282,8 +260,8 @@ public class Students extends javax.swing.JFrame {
             return;
         }
         
-      
-          cleanFields();
+        loadData();
+        cleanFields();
     }//GEN-LAST:event_btnChangeActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
@@ -302,10 +280,6 @@ public class Students extends javax.swing.JFrame {
         
       
     }//GEN-LAST:event_btnDeleteActionPerformed
-
-    private void cmbKitecourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbKitecourseActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbKitecourseActionPerformed
    
     private void cleanFields() {
         txtFirstName.setText("");
@@ -328,12 +302,10 @@ public class Students extends javax.swing.JFrame {
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnChange;
     private javax.swing.JButton btnDelete;
-    private javax.swing.JComboBox<Kitecourse> cmbKitecourse;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

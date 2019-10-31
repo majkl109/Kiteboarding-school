@@ -10,7 +10,15 @@ public abstract class ClassEntity {
     
     @Id
     @GeneratedValue
-    private int id = 0;
+    private int id ;
+    
+    public ClassEntity(){
+        
+    }
+    
+    public ClassEntity(int id){
+        this.id = id;
+    }
 
     public int getId() {
         return id;

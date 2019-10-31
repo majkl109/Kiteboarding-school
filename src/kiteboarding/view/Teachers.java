@@ -1,39 +1,38 @@
 package kiteboarding.view;
 
-import javax.swing.DefaultComboBoxModel;
 import kiteboarding.controller.ProcessingTeacher;
 import kiteboarding.model.Teacher;
 import kiteboarding.helper.KiteboardingException;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
-import kiteboarding.controller.ProcessingKitecourse;
-import kiteboarding.model.Kitecourse;
+
 
         
 public class Teachers extends javax.swing.JFrame {
 
     
     private ProcessingTeacher processingEntity;
-    private static DefaultComboBoxModel<Kitecourse>modelKitecourse;
-    private Teacher teacher;
+//    private static DefaultComboBoxModel<Kitecourse>modelKitecourse;
+//    private Teacher teacher;
     
     public Teachers() {
         initComponents();
         processingEntity = new ProcessingTeacher();
-        
-        DefaultComboBoxModel<Kitecourse> mkc = new DefaultComboBoxModel<>();
-        Kitecourse kc = new Kitecourse();
-        kc.setId(0);
-        kc.setKitecoursetype("Select kitecourse");
-        mkc.addElement(kc);
-        new ProcessingKitecourse().getListed().forEach((c) -> {
-            mkc.addElement(c);
-        });
-        cmbKitecourse.setModel(mkc);
-     
-        loadData();
+//        
+//        DefaultComboBoxModel<Kitecourse> mkc = new DefaultComboBoxModel<>();
+//        Kitecourse kc = new Kitecourse();
+//        kc.setId(0);
+//        kc.setKitecoursetype("Select kitecourse");
+//        mkc.addElement(kc);
+//        new ProcessingKitecourse().getListed().forEach((c) -> {
+//            mkc.addElement(c);
+//        });
+//        cmbKitecourse.setModel(mkc);
+//     
+//        loadData();
+//    
     }
-    private void loadData() {
+        private void loadData() {
         DefaultListModel<Teacher> m = new DefaultListModel<>();
         processingEntity.getListed().forEach((t) -> {
             m.addElement(t);
@@ -41,6 +40,7 @@ public class Teachers extends javax.swing.JFrame {
         listEntites.setModel(m);
     }    
 
+  
    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -55,16 +55,14 @@ public class Teachers extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtIBAN = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         btnAdd = new javax.swing.JButton();
         btnChange = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
-        cmbKitecourse = new javax.swing.JComboBox<Kitecourse>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         listEntites.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
@@ -78,8 +76,6 @@ public class Teachers extends javax.swing.JFrame {
         jLabel2.setText("Last name");
 
         jLabel3.setText("E mail");
-
-        jLabel5.setText("Kitecourse");
 
         jLabel6.setText("IBAN");
 
@@ -106,12 +102,6 @@ public class Teachers extends javax.swing.JFrame {
             }
         });
 
-        cmbKitecourse.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbKitecourseActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -129,20 +119,19 @@ public class Teachers extends javax.swing.JFrame {
                                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel1)
-                                            .addComponent(jLabel2)
-                                            .addComponent(jLabel3)
-                                            .addComponent(jLabel5))
+                                            .addComponent(jLabel3))
                                         .addGap(27, 27, 27))
                                     .addGroup(layout.createSequentialGroup()
                                         .addContainerGap()
-                                        .addComponent(jLabel6)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel6)
+                                            .addComponent(jLabel2))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txtLastName, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtLastName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
                                     .addComponent(txtEmail)
                                     .addComponent(txtFirstName)
-                                    .addComponent(txtIBAN)
-                                    .addComponent(cmbKitecourse, javax.swing.GroupLayout.Alignment.LEADING, 0, 175, Short.MAX_VALUE)))
+                                    .addComponent(txtIBAN)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(btnAdd)))
@@ -162,25 +151,21 @@ public class Teachers extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1))
-                        .addGap(18, 18, 18)
+                        .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(cmbKitecourse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))
+                        .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -194,7 +179,7 @@ public class Teachers extends javax.swing.JFrame {
                             .addComponent(jLabel4)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 62, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -212,13 +197,14 @@ public class Teachers extends javax.swing.JFrame {
             return;
         }
     
-        modelKitecourse = (DefaultComboBoxModel<Kitecourse>) cmbKitecourse.getModel();
-        for (int i = 0; i < modelKitecourse.getSize(); i++) {
-            if (modelKitecourse.getElementAt(i).getId() == teacher.getKitecourse().getId()) {
-                cmbKitecourse.setSelectedIndex(i);
-                break;
-            }
-        }
+//        modelKitecourse = (DefaultComboBoxModel<Kitecourse>) cmbKitecourse.getModel();
+//        for (int i = 0; i < modelKitecourse.getSize(); i++) {
+//            if (modelKitecourse.getElementAt(i).getId() == teacher.getKitecourse().getId()) {
+//                cmbKitecourse.setSelectedIndex(i);
+//                break;
+//            }
+//        }
+        
         
         cleanFields();
         
@@ -226,7 +212,6 @@ public class Teachers extends javax.swing.JFrame {
         txtLastName.setText(entity.getLastname());
         txtEmail.setText(entity.getEmail());
         txtIBAN.setText(entity.getIban());
-        
     
         
         
@@ -243,11 +228,21 @@ public class Teachers extends javax.swing.JFrame {
             JOptionPane.showConfirmDialog(null, e.getMessage());
             return;
         }
-        
-      
-          cleanFields();
+        loadEntity();
+         
+        cleanFields();
     }//GEN-LAST:event_btnAddActionPerformed
-
+    private void loadEntity(){
+        DefaultListModel<Teacher> m = new DefaultListModel<>();
+        Teacher t = new Teacher();
+        t.setFirstname("Please");
+        t.setLastname("Wait");
+        m.addElement(t);
+        listEntites.setModel(m);
+        
+    }
+            
+            
     private void btnChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeActionPerformed
         Teacher entity = listEntites.getSelectedValue();
           
@@ -264,8 +259,9 @@ public class Teachers extends javax.swing.JFrame {
             return;
         }
         
-      
-          cleanFields();
+        loadData();
+         
+        cleanFields();
     }//GEN-LAST:event_btnChangeActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
@@ -284,10 +280,6 @@ public class Teachers extends javax.swing.JFrame {
         
       
     }//GEN-LAST:event_btnDeleteActionPerformed
-
-    private void cmbKitecourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbKitecourseActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbKitecourseActionPerformed
    
     private void cleanFields() {
         txtFirstName.setText("");
@@ -302,18 +294,18 @@ public class Teachers extends javax.swing.JFrame {
         entity.setEmail(txtEmail.getText());
         entity.setIban(txtIBAN.getText());
     }
+
+
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnChange;
     private javax.swing.JButton btnDelete;
-    private javax.swing.JComboBox<Kitecourse> cmbKitecourse;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;

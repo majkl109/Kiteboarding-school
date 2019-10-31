@@ -35,9 +35,7 @@ public class ProcessingKitegroup extends Processing<Kitegroup> implements Proces
     }
     @Override
     public void delete(Kitegroup kg) throws KiteboardingException{ 
-        if(kg.getStudents().size()>0){
-        throw new KiteboardingException("Kitegroup can not be deleted, it has students");
-        }
+        checking(kg);
         dao.delete(kg);
     }
 }

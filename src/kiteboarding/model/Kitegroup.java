@@ -4,15 +4,15 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import java.util.ArrayList;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.CascadeType;
 
 
 @Entity
@@ -20,23 +20,31 @@ import javax.persistence.TemporalType;
 public class Kitegroup extends ClassEntity implements Serializable{
 
     
+   
+    
     @ManyToOne
-     private Teacher teacher;
+    private Kitecourse kitecourse;
+    
+    @ManyToOne
+    private Teacher teacher;
      
-     private int numberOfStudents;
+    @ManyToOne
+    private Student student;
+    
+    private int numberOfStudents;
      
-     @Temporal(TemporalType.DATE)
-     private Date startDate;
+    @Temporal(TemporalType.DATE)
+    private Date startDate;
+    
 
-     @ManyToMany(cascade = {CascadeType.ALL})
-     @JoinTable(
-        name = "kitemember",
-        joinColumns = {@JoinColumn( name = "kitegroup id")},
-        inverseJoinColumns = {@JoinColumn( name = "student id")}
-    )         
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "kitemember",
+            joinColumns = { @JoinColumn(name = "student_id")},
+            inverseJoinColumns = { @JoinColumn(name = "kitegroup_id")}
+    )
     private List<Student> students = new ArrayList<>();
      
-    private Kitecourse kitecourse;
  
      
     public Kitecourse getKitecourse() {
@@ -55,6 +63,15 @@ public class Kitegroup extends ClassEntity implements Serializable{
         this.teacher = teacher;
     }
 
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
+    
     public int getNumberOfStudents() {
         return numberOfStudents;
     }
@@ -70,14 +87,14 @@ public class Kitegroup extends ClassEntity implements Serializable{
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
-
+    
     public List<Student> getStudents() {
         return students;
     }
 
     public void setStudents(List<Student> students) {
         this.students = students;
-    }
+  }
     
 }
 
