@@ -30,12 +30,13 @@ public class Students extends javax.swing.JFrame {
 //        });
 //        cmbKitecourse.setModel(mkc);
 //     
-//        loadData();
+        loadData();
     }
     private void loadData() {
         DefaultListModel<Student> m = new DefaultListModel<>();
         processingEntity.getListed().forEach((s) -> {
             m.addElement(s);
+            
         });
         listEntites.setModel(m);
     }    
@@ -278,7 +279,7 @@ public class Students extends javax.swing.JFrame {
             JOptionPane.showConfirmDialog(null, "Can not be deleted");
         }
         
-      
+        loadData();
     }//GEN-LAST:event_btnDeleteActionPerformed
    
     private void cleanFields() {

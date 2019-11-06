@@ -29,6 +29,13 @@ public class DAO<T> {
         return q.list();
     }
     
+    public void merge(T object){
+                session.beginTransaction();
+                session.saveOrUpdate(object);
+                session.getTransaction().commit();
+    }  
+    
+    
     //Delete
     public void delete(T ClassEntity) {
         session.beginTransaction();

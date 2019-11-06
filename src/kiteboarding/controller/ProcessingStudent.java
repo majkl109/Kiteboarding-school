@@ -8,8 +8,6 @@ import java.util.List;
 import org.hibernate.Query;
 
 
-
-
 public class ProcessingStudent extends ProcessingPerson<Student> implements ProcessingInterface<Student> {
     
     public ProcessingStudent(){
@@ -53,7 +51,7 @@ public class ProcessingStudent extends ProcessingPerson<Student> implements Proc
         
         dao.delete(s);   
     }
-     public void checking(Student s) throws KiteboardingException{
+    public void checking(Student s) throws KiteboardingException{
         
     }
    

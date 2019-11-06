@@ -293,6 +293,7 @@ public class Teachers extends javax.swing.JFrame {
         entity.setLastname(txtLastName.getText());
         entity.setEmail(txtEmail.getText());
         entity.setIban(txtIBAN.getText());
+        
     }
 
 

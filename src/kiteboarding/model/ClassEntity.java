@@ -1,5 +1,6 @@
 package kiteboarding.model;
 
+import javax.persistence.GenerationType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
@@ -9,8 +10,8 @@ import javax.persistence.MappedSuperclass;
 public abstract class ClassEntity {
     
     @Id
-    @GeneratedValue
-    private int id ;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id = 0;
     
     public ClassEntity(){
         
@@ -27,10 +28,13 @@ public abstract class ClassEntity {
     public void setId(int id) {
         this.id = id;
     }
-    
 
-   
+    @Override
+    public String toString() {
+        return "ClassEntity{" + "id=" + id + '}';
+    }
     
+     
 }
 
     

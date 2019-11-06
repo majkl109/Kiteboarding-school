@@ -1,6 +1,5 @@
 package kiteboarding.controller;
 
-import java.util.Arrays;
 import java.util.List;
 import kiteboarding.helper.HibernateUtil;
 import kiteboarding.helper.KiteboardingException;
@@ -12,16 +11,18 @@ public class ProcessingTeacher extends ProcessingPerson<Teacher> implements Proc
     
         public ProcessingTeacher(){
         super();
-    }
+        }
     
     public List<Teacher> getListed(){
         return HibernateUtil.getSession().createQuery("from Teacher").list();
-    }
+        
+        }
+        
     public List<Teacher> getListed(String condition,boolean isSelected){
 
         Query query = HibernateUtil.getSession().createQuery("from Teacher a"
                + " where concat(a.firstName,' ',a.lastName) like :condition")
-               .setString("condition", "%" + condition + "%");
+               .setString("condition","%" + condition + "%");
         if(isSelected){
             query.setMaxResults(50);
         }
@@ -35,21 +36,7 @@ public class ProcessingTeacher extends ProcessingPerson<Teacher> implements Proc
         
         return dao.save(t);
     }
-    
-    public void delete(Teacher t) throws KiteboardingException{
-        
-        if(!t.getKitegroups().isEmpty()){
-            throw new KiteboardingException(
-             "Cannot be erased because teacher teaches Kitegoups: " + 
-                     Arrays.toString(t.getKitegroups().toArray())
-            );
-        }
-        dao.delete(t);
-    }
-    public void checking(Teacher t) throws KiteboardingException{
-        
-    }
-    
+          
     public List<Teacher> save(List<Teacher> teachers) throws KiteboardingException{
         
         for(Teacher t : teachers) {
@@ -59,6 +46,17 @@ public class ProcessingTeacher extends ProcessingPerson<Teacher> implements Proc
         return dao.save(teachers);
     }
     
+    
+    public void delete(Teacher t) throws KiteboardingException{
+        
+       
+        dao.delete(t);
+    }
+        
+    public void checking(Teacher t) throws KiteboardingException{
+        
+    }
+ 
 }
 
 

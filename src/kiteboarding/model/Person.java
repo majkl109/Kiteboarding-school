@@ -13,19 +13,19 @@ public abstract class Person extends ClassEntity {
      private String lastname;
      private String email;  
      private String iban;
-
-    public Person() {
-        super();
-    }
-     
-    public Person(String firstname, String lastname, String email,Integer id, String iban ) {
-         super(id);
-         this.firstname = firstname;
-         this.lastname = lastname;
-         this.email = email;
-         this.iban = iban;
-         
-     }
+//
+//    public Person() {
+//        super();
+//    }
+//     
+//    public Person(String firstname, String lastname, String email,Integer id, String iban ) {
+//         super(id);
+//         this.firstname = firstname;
+//         this.lastname = lastname;
+//         this.email = email;
+//         this.iban = iban;
+//         
+//     }
 
     public String getFirstname() {
         return firstname;

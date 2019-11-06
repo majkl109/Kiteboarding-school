@@ -24,9 +24,15 @@ public class ProcessingKitecourse extends Processing<Kitecourse> {
         return dao.save(c);
     }
     
+    public void update(Kitecourse c) throws KiteboardingException{
+         checking(c);
+        dao.merge(c);
+    }
+    
+    
     public void delete(Kitecourse c) throws KiteboardingException{
         
-        if(c.getKitegroups().isEmpty()){
+        if(c==null){
             throw new KiteboardingException("Kitecourse has kitegroups and can not be deleted");
         }
         
@@ -40,7 +46,7 @@ public class ProcessingKitecourse extends Processing<Kitecourse> {
         if(c.getKitecoursetype().trim().length() == 0){
             throw new KiteboardingException ("Kitecoursetype is empty. Entry is manadatory");
         }
-        if(c.getDuration()<0 || c.getDuration()>15){
+        if(c.getDuration()== 0){
             throw new KiteboardingException ("Enter valid duration, please: ");
         }
         if(c.getPrice() == 0){

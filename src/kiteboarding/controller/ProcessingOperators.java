@@ -19,12 +19,17 @@ public class ProcessingOperators extends Processing<Operators> implements Proces
               .setString("email", email)
               .setString("password", password)
               .uniqueResult(); 
-      return o;
+        if(o==null){
+            return null;
+        }
+        return o;
       
-    //  if(BCrypt.checkpw(password, o.getPassword())){
-  //        return o;
-//      }        
+//         if(BCrypt.checkpw(password, o.getPassword())){
+//         return o;
+//        }   
+//      
       
+ //     return null;
   }    
     
   @Override

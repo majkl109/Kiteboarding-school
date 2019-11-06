@@ -44,6 +44,8 @@ public class KiteboardingMenu extends javax.swing.JFrame {
             .addGap(0, 246, Short.MAX_VALUE)
         );
 
+        jMenuBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
         jMenu1.setText("Kiteboarding school");
 
         jMenuItem1.setText("Kitegroup");

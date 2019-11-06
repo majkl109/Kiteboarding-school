@@ -27,12 +27,12 @@ public abstract class ProcessingPerson<T extends Person> extends Processing<T> {
         if(p.getLastname().trim().isEmpty()){
             throw new KiteboardingException("Last name is not entered ");
         }
-        if(!EmailValidator.getInstance().isValid(p.getEmail())){
-            throw new KiteboardingException("Email is not valid ");
-        }
-        if(!IBANValidator.getInstance().isValid(p.getIban())){
-            throw new KiteboardingException("IBAN is not valid ");
-        }
+//        if(!EmailValidator.getInstance().isValid(p.getEmail())){
+//            throw new KiteboardingException("Email is not valid ");
+//        }
+//        if(!IBANValidator.getInstance().isValid(p.getIban())){
+//            throw new KiteboardingException("IBAN is not valid ");
+//        }
      
     }
     

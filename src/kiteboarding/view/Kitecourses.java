@@ -167,8 +167,8 @@ public class Kitecourses extends javax.swing.JFrame {
         clearFields();
         
         txtKitecoursetype.setText(kc.getKitecoursetype());
-        txtDuration.setText(format.format(kc.getDuration()));
-        txtPrice.setText(format.format(kc.getPrice()));
+        txtDuration.setText(String.valueOf(kc.getDuration()));
+        txtPrice.setText(String.valueOf(kc.getPrice()));
     }//GEN-LAST:event_listKitecourseValueChanged
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
@@ -193,11 +193,21 @@ public class Kitecourses extends javax.swing.JFrame {
 
         if (c == null) {
             JOptionPane.showConfirmDialog(null, "Choose kitecourse first");
+            return;
         }
 
 
         try {
-            processingKitecourse.save(c);
+            
+            c= new Kitecourse();
+            c.setId(listKitecourse.getSelectedValue().getId());
+            c.setDuration(Integer.valueOf(txtDuration.getText()));
+            c.setPrice(Integer.valueOf(txtPrice.getText()));
+            c.setKitecoursetype(txtKitecoursetype.getText());
+ 
+            
+            
+             processingKitecourse.save(c);
         } catch (KiteboardingException e) {
             JOptionPane.showConfirmDialog(null, e.getMessage());
             return;

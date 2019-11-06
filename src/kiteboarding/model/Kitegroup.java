@@ -37,15 +37,15 @@ public class Kitegroup extends ClassEntity implements Serializable{
     private Date startDate;
     
 
-    @ManyToMany(cascade = { CascadeType.ALL })
-    @JoinTable(
-            name = "kitemember",
-            joinColumns = { @JoinColumn(name = "student_id")},
-            inverseJoinColumns = { @JoinColumn(name = "kitegroup_id")}
-    )
-    private List<Student> students = new ArrayList<>();
-     
- 
+//    @ManyToMany(cascade = { CascadeType.ALL })
+//    @JoinTable(
+//            name = "kitemember",
+//            joinColumns = { @JoinColumn(name = "student_id")},
+//            inverseJoinColumns = { @JoinColumn(name = "kitegroup_id")}
+//    )
+//    private List<Student> students = new ArrayList<>();
+//     
+// 
      
     public Kitecourse getKitecourse() {
         return kitecourse;
@@ -88,13 +88,13 @@ public class Kitegroup extends ClassEntity implements Serializable{
         this.startDate = startDate;
     }
     
-    public List<Student> getStudents() {
-        return students;
-    }
-
-    public void setStudents(List<Student> students) {
-        this.students = students;
-  }
+//    public List<Student> getStudents() {
+//        return students;
+//    }
+//
+//    public void setStudents(List<Student> students) {
+//        this.students = students;
+//  }
     
 }
 
