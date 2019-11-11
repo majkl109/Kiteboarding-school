@@ -23,9 +23,9 @@ public class ProcessingKitegroup extends Processing<Kitegroup> implements Proces
         if(kg.getTeacher()== null){
            throw new KiteboardingException("Enter valid teacher");
         }
-        if(kg.getNumberOfStudents()== 0){
-           throw new KiteboardingException("Enter valid number of students");        
-        }
+//        if(kg.getNumberOfStudents()== 0){
+//           throw new KiteboardingException("Enter valid number of students");        
+//        }
     }
     @Override
     public Kitegroup save(Kitegroup kg) throws KiteboardingException{

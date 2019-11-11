@@ -247,9 +247,10 @@ public class Students extends javax.swing.JFrame {
 
     private void btnChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeActionPerformed
         Student entity = listEntites.getSelectedValue();
-          
+        
         if (entity == null) {
             JOptionPane.showConfirmDialog(null, "Choose student first");
+           
         }  
         
         takeoverValues(entity);
@@ -262,7 +263,7 @@ public class Students extends javax.swing.JFrame {
         }
         
         loadData();
-        cleanFields();
+       // cleanFields();
     }//GEN-LAST:event_btnChangeActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed

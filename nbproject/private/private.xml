@@ -3,7 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/majkl/Documents/NetBeansProjects/Kiteboarding/src/kiteboarding/Start.java</file>
+            <file>file:/C:/Users/majkl/Documents/NetBeansProjects/Kiteboarding/src/kiteboarding/view/SplashScreen.java</file>
+            <file>file:/C:/Users/majkl/Documents/NetBeansProjects/Kiteboarding/src/kiteboarding/view/Kitegroups.java</file>
+            <file>file:/C:/Users/majkl/Documents/NetBeansProjects/Kiteboarding/src/kiteboarding/view/LoginWindow.java</file>
+            <file>file:/C:/Users/majkl/Documents/NetBeansProjects/Kiteboarding/src/kiteboarding/view/Students.java</file>
+            <file>file:/C:/Users/majkl/Documents/NetBeansProjects/Kiteboarding/src/kiteboarding/view/Teachers.java</file>
+            <file>file:/C:/Users/majkl/Documents/NetBeansProjects/Kiteboarding/src/kiteboarding/model/Kitegroup.java</file>
+            <file>file:/C:/Users/majkl/Documents/NetBeansProjects/Kiteboarding/src/kiteboarding/view/KiteboardingMenu.java</file>
+            <file>file:/C:/Users/majkl/Documents/NetBeansProjects/Kiteboarding/src/kiteboarding/controller/ProcessingStudent.java</file>
         </group>
     </open-files>
 </project-private>

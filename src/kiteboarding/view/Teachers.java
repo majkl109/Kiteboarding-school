@@ -29,8 +29,8 @@ public class Teachers extends javax.swing.JFrame {
 //        });
 //        cmbKitecourse.setModel(mkc);
 //     
-//        loadData();
-//    
+        loadData();
+   
     }
         private void loadData() {
         DefaultListModel<Teacher> m = new DefaultListModel<>();
@@ -229,7 +229,7 @@ public class Teachers extends javax.swing.JFrame {
             return;
         }
         loadEntity();
-         
+        loadData(); 
         cleanFields();
     }//GEN-LAST:event_btnAddActionPerformed
     private void loadEntity(){

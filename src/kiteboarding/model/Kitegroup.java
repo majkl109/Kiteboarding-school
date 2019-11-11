@@ -95,6 +95,11 @@ public class Kitegroup extends ClassEntity implements Serializable{
 //    public void setStudents(List<Student> students) {
 //        this.students = students;
 //  }
+
+    @Override
+    public String toString() {
+        return "kitecourse=" + kitecourse + ", teacher=" + teacher + ", student=" + student + ", startDate=" + startDate ;
+    }
     
 }
 
